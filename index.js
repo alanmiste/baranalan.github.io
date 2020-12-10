@@ -8,3 +8,5 @@ console.log(isPrime(Date.now()));
 console.log("Hello world!")
 
 console.log("new change")
+
+console.log("new line")
