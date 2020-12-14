@@ -10,5 +10,17 @@
   "license": "ISC",
   "dependencies": {
     "is-prime": "^1.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baranalan/baranalan.github.io.git"
+  },
+  "keywords": [
+    "new",
+    "npm"
+  ],
+  "bugs": {
+    "url": "https://github.com/baranalan/baranalan.github.io/issues"
+  },
+  "homepage": "https://github.com/baranalan/baranalan.github.io#readme"
 }
