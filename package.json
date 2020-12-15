@@ -15,7 +15,8 @@
     "type": "git",
     "url": "git+https://github.com/baranalan/baranalan.github.io.git",
     "anotherkey": "value",
-    "secondkey": "value2"
+    "secondkey": "value2",
+    "thirdkey": "value34"
   },
   "keywords": [
     "new",
