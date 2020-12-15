@@ -5,3 +5,6 @@
 
 ## Run
 - `node index.js`
+
+## Test
+- `node test.js`
