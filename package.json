@@ -13,8 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/baranalan/baranalan.github.io.git",
-    "new key":"some value"
+    "url": "git+https://github.com/baranalan/baranalan.github.io.git"
   },
   "keywords": [
     "new",
