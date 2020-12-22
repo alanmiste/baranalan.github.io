@@ -24,6 +24,12 @@ header nav ul li a:hover{
     color: #666666;
 
 }
+aside{
+    
+    padding-right: 15px;
+    margin-right: 15px;
+    float: left;
+    }
 .container{
     max-width: 1200px;
     margin: 0 auto;
