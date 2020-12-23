@@ -1,8 +1,8 @@
 body{
-    background-color: #eeeeee;
+    background-color: #2f616c;
 }
 header{
-    background-color: powderblue;
+    background-color: #101c28;
 
 }
 header nav ul{
@@ -12,16 +12,18 @@ header nav ul{
     margin: 0;
 }
 header nav ul li{
-padding : 5px;
+padding : 15px;
 }
 header nav ul li a{
-    color:#111111;
+    color:#faebd1;
+    font-size:25px;
+    padding: 15px;
     text-decoration: none;
     transition: color 0.5s ease;
-    
+       
 }
 header nav ul li a:hover{
-    color: #666666;
+    color: #ff7c1d;
 
 }
 aside{
@@ -35,5 +37,38 @@ aside{
     margin: 0 auto;
 }
 h1{
-    color:#222222
+    color:#FFC300 ;
+  text-align:center;
+  font-size:60px;
 }
+p{
+  color:#faebd1;
+ }
+h2{
+  color:#ff7c1d;
+}
+.container2 {
+    border-radius: 5px;
+    background-color: #101c28;
+    padding: 20px;
+  }
+  lable{
+    color:#faebd1;
+  }
+  input,textarea{
+    width:100%;
+    padding:10px;
+    border: 2px solid #ccc;
+    border-radius:4px;
+    box-sizing:border-box;
+    margin-top:5px;
+    margin-bottom:15px;
+  }
+  button{
+    color:#ffffff;
+    background-color:#4CAF50;
+    border:none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor:pointer;
+  }
