@@ -18,23 +18,33 @@
 <body>
     <h1>Alan Miste</h1>
     <header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/index.html">Home <i class="fas fa-anchor"></i></a>
-                    <div class=test></div>
-                </li>
-                <li>
-                    <a href="/index.html#experince">experince</a>
-                </li>
-                <li>
-                    <a href="/index.html#skills">skills</a>
-                </li>
-                <li>
-                    <a href="/index.html#contact">contact</a>
-                </li>
-            </ul>
-        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/index.html#experince">Experince</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/index.html#contact">Contact</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </li> -->
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
     </header>
     <section class="container" id="home">
 
@@ -62,34 +72,17 @@
     </section>
     <section class="container" id="contact">
         <h2>Contact</h2>
-        <div class="container2">
-            <form>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                </div>
-                <lable>First Name</lable>
-                <input placeholder="Enter your First Name ">
-                <lable>Last Name</lable>
-                <input placeholder="Enter your Last Name">
-                <lable>E-mail</lable>
-                <input placeholder="Enter your E-mail">
-                <lable>Message</lable>
-                <textarea placeholder="Write your message here ..." style="hight:200px;">
-            </textarea>
-                <button>Send</button>
-
-            </form>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
         </div>
-    </section>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Your Message</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button>Send</button>
 
-    <button id="iddentyfire">click me </button>
-    <script>
-        document.getElementById("iddentyfire").addEventListener("click", function (e) {
-            alert(5 * 5)
-        })
-    </script>
+    </section>
 </body>
 
 </html>
