@@ -1,5 +1,5 @@
 body {
-  background-color: #2f616c;
+  background-color: #333333;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -107,4 +107,7 @@ button {
 
 .badge {
   border-radius: 50%;
+}
+.el{
+  position:sticky;
 }
