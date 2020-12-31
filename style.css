@@ -76,13 +76,14 @@ h1 {
 
 p {
   color: #faebd1;
+  margin:5px;
 }
 
 h2 {
   color: #ff7c1d;
 }
 
-lable {
+label {
   color: #f6fad1;
 }
 
