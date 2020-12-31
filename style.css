@@ -109,6 +109,20 @@ button {
 .badge {
   border-radius: 50%;
 }
+/* the next class make the photo stiky
 .el{
-  position:sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 200px;
+} */
+section{
+  color: #faebd1;
+}
+
+section aside img{
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
 }
