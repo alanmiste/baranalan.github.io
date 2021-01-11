@@ -49,7 +49,7 @@ document.querySelector("section#skills").addEventListener("click",event=>{
 // hadel the response data
 // display the data in the dom
 
-const render=(degrees)=>{
+const render = (degrees) => {
     let element = document.createElement("li") //Create a "li" element via JavaScript instead of HTML
     element.classList.add("nav-item") // add a class to the previous element 
     let element2 = document.createElement("a") //Create a "a" element via JavaScript instead of HTML
@@ -58,21 +58,23 @@ const render=(degrees)=>{
     element.appendChild(element2) //move the anchor element in the li element
     document.querySelector("ul.navbar-nav").appendChild(element) //inserting the elثment into the dom
 }
-const apikey="" //Here you must type the API in order for it to be replaced in fetch.
+const apikey = "" //Here you must type the API in order for it to be replaced in fetch.
 // This "if" statement check if the local storage (cookies) has data (temperature), 
 //so the code will not request datas from the API and 
 //this is in order not to reach the maximum data request.
-if(!localStorage.getItem("temp")){
+if (!localStorage.getItem("temp")) {
     //async request - concurrency
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=hamburg&appid=${apikey}`)
-    .then(response => response.json()) //then is awating the promisse
-    .then(data => {
-        localStorage.setItem('temp', JSON.stringify(data)); //save the complete data in the local storage(cookies), to reduse the amount of API calls because it has a limit through caching.
-       render(data.main.temp - 273.15) //Here it's a "render" function calling, the "data" came from the API link in Fetch, then the "temp" was determined from the data
-       console.log("render fresh v")
-    }).catch(e=>{
-        console.log(e)
-    })
+        .then(response => {
+            return response.json()
+        }) //then is awating the promisse. parse the response in JSON.
+        .then(data => {
+            localStorage.setItem('temp', JSON.stringify(data)); //save the complete data in the local storage(cookies), to reduse the amount of API calls because it has a limit through caching.
+            render(data.main.temp - 273.15) //Here it's a "render" function calling, the "data" came from the API link in Fetch, then the "temp" was determined from the data
+            console.log("render fresh v")
+        }).catch(e => {
+            console.log(e)
+        })
     /* Through the "if" conditional statment, the code checks whether there is data in the cache 
     (the browser's local storage - cookies),in case there is no data, it requests from the 
     weather API from an external website and then it is placed on the page by passing the 
@@ -83,3 +85,54 @@ if(!localStorage.getItem("temp")){
     render(JSON.parse(localStorage.getItem("temp")).main.temp - 273.15)
     console.log("render cached version")
 }
+
+
+console.log("###########################################");
+setTimeout(() => {
+    console.log(1) //expect to run first, because the timeout is 0 mSecound. but it run as a secound
+},0);
+console.log(2) //expect to run secound, but it come first
+// output:
+// 2
+// 1
+console.log("###########################################");
+
+const promiseA = new Promise((resolutionFunc, rejectionFunc) => {
+    setTimeout(() => {
+        
+        resolutionFunc("a")
+    }, 1000);
+});
+
+const promiseB = new Promise((resolutionFunc, rejectionFunc) => {
+    setTimeout(() => {
+        
+        resolutionFunc("b")
+    }, 2000);
+});
+
+const promiseC = new Promise((resolutionFunc, rejectionFunc) => {
+    setTimeout(() => {
+        
+        resolutionFunc("c")
+    }, 500);
+});
+// At this point, "promiseA" is already settled.
+promiseA
+    .then((val) => console.log("asynchronous logging has val:", val))
+    .catch(err => console.log("Error", err))
+    .finally(() => console.log("Finally"));
+    
+console.log("immediate logging");
+
+promiseB
+    .then((val) => console.log("asynchronous logging has val:", val))
+    .catch(err => console.log("Error", err))
+    .finally(() => console.log("Finally"));
+console.log("immediate logging");
+
+promiseC
+    .then((val) => console.log("asynchronous logging has val:", val))
+    .catch(err => console.log("Error", err))
+    .finally(() => console.log("Finally"));
+console.log("immediate logging");
