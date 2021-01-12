@@ -49,7 +49,7 @@ document.querySelector("section#skills").addEventListener("click",event=>{
 // hadel the response data
 // display the data in the dom
 
-const render = (degrees) => {
+/* const render = (degrees) => {
     let element = document.createElement("li") //Create a "li" element via JavaScript instead of HTML
     element.classList.add("nav-item") // add a class to the previous element 
     let element2 = document.createElement("a") //Create a "a" element via JavaScript instead of HTML
@@ -74,20 +74,22 @@ if (!localStorage.getItem("temp")) {
             console.log("render fresh v")
         }).catch(e => {
             console.log(e)
-        })
-    /* Through the "if" conditional statment, the code checks whether there is data in the cache 
-    (the browser's local storage - cookies),in case there is no data, it requests from the 
-    weather API from an external website and then it is placed on the page by passing the 
-    data within the "render" function, which in turn creates a place for data in the Nav-Bar.
-    And if there is data, the "else" is executed, and within it the "render" function is 
-    executed only, with the data in the local memory passed to it of course. */
-} else {
+        }) */
+/* Through the "if" conditional statment, the code checks whether there is data in the cache 
+(the browser's local storage - cookies),in case there is no data, it requests from the 
+weather API from an external website and then it is placed on the page by passing the 
+data within the "render" function, which in turn creates a place for data in the Nav-Bar.
+And if there is data, the "else" is executed, and within it the "render" function is 
+executed only, with the data in the local memory passed to it of course. */
+/* } else {
     render(JSON.parse(localStorage.getItem("temp")).main.temp - 273.15)
     console.log("render cached version")
-}
+} */
 
 
-console.log("###########################################");
+
+// setTimeout example. despite the timeout 0 we have a unexpected behaviour in the order. 
+/* console.log("###########################################");
 setTimeout(() => {
     console.log(1) //expect to run first, because the timeout is 0 mSecound. but it run as a secound
 },0);
@@ -95,9 +97,12 @@ console.log(2) //expect to run secound, but it come first
 // output:
 // 2
 // 1
-console.log("###########################################");
+console.log("###########################################"); */
 
-const promiseA = new Promise((resolutionFunc, rejectionFunc) => {
+
+
+// Manually created await (asyncronaus opration) 
+/* const promiseA = new Promise((resolutionFunc, rejectionFunc) => {
     setTimeout(() => {
         
         resolutionFunc("a")
@@ -135,4 +140,52 @@ promiseC
     .then((val) => console.log("asynchronous logging has val:", val))
     .catch(err => console.log("Error", err))
     .finally(() => console.log("Finally"));
-console.log("immediate logging");
+console.log("immediate logging"); */
+
+
+
+// fetch GET and POST data to the API.
+/* fetch(`https://jsonplaceholder.typicode.com/users/1`) // simple GET request
+    //start then()
+    .then(response => {
+        return response.json()
+    }) //then is awating the promisse. parse the response in JSON.
+    .then(json => {
+        console.log(json.name)
+        console.log(json.username)
+    }).catch(e => {
+        console.log(e)
+    })
+
+fetch('https://jsonplaceholder.typicode.com/posts', { // advanced POST request with body and headers
+    method: 'POST',
+    body: JSON.stringify({
+        title: 'foo',
+        body: 'bar',
+        userId: 1,
+    }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    },
+}) //fetch returns always a promise, we have TO await with then()
+    .then(response => {
+        return response.json()
+    })
+    .then(json => {
+        console.log(json.name)
+        console.log(json.username)
+    }).catch(e => {
+        console.log(e)
+    }) */
+
+
+    fetch(`http://localhost:8080`) // connect to the local server
+    //start then()
+    .then(response => {
+        return response.json()
+    }) //then is awating the promisse. parse the response in JSON.
+    .then(json => {
+        console.log(json)
+    }).catch(e => {
+        console.log(e)
+    })
